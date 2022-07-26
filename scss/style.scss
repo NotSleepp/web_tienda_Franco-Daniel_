@@ -1,0 +1,38 @@
+@import "reset.scss";
+@import "nav.scss";
+@import "main.scss";
+@import "footer.scss";
+@import "mediaquerys.scss";
+
+
+@mixin tamanos_letras ($font-size) {
+    font-size: $font-size;
+}
+
+$estilo_btn:(
+    tamano: 8px 18px,
+    borde: none,
+    borde_circular: 10px,
+    margen: 8px,
+    fondo: #007bff,
+    letra: none,
+    color_letra: #fff
+);
+
+.btnPrincipal{
+    padding: map-get($estilo_btn, tamano);
+    border: map-get($estilo_btn, borde);
+    border-radius: map-get($estilo_btn, borde_circular);
+    margin: map-get($estilo_btn, margen);
+    background-color: map-get($estilo_btn, fondo );
+    text-decoration: map-get($estilo_btn, letra);
+    color: map-get($estilo_btn, color_letra);
+    @include tamanos_letras(16px);
+} 
+
+.btn-largo{
+    @extend .btnPrincipal;
+    text-transform: uppercase;
+    @include tamanos_letras(25px);
+    padding: 12px 100px;
+}
